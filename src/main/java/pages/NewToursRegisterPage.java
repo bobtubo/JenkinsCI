@@ -10,93 +10,79 @@ public class NewToursRegisterPage extends BasePage{
     }
     @FindBy(css = "input[name='firstName']")
     private WebElement firstNameLocator;
-
     @FindBy(css = "input[name='lastName']")
     private WebElement lastNameLocator;
-
     @FindBy(css = "input[name='phone']")
     private WebElement phoneLocator;
-
-    @FindBy(css = "input[name='userName']")
+    @FindBy(id = "userName")
     private WebElement emailLocator;
-
     @FindBy(css = "input[name='address1']")
     private WebElement address1Locator;
-
     @FindBy(css = "input[name='city']")
     private WebElement cityLocator;
 
     @FindBy(css = "input[name='state']")
-    private WebElement stateLocator;
-
+    private WebElement stateOrProvinceLocator;
     @FindBy(css = "input[name='postalCode']")
-    private WebElement postalCodeLocator;
+    private WebElement postcodeLocator;
 
-    @FindBy(css = "input[name='country']")
+    @FindBy(css = "select[name='country']")
     private WebElement countryLocator;
-
     @FindBy(css = "input[name='email']")
     private WebElement usernameLocator;
 
     @FindBy(css = "input[name='password']")
     private WebElement passwordLocator;
-
     @FindBy(css = "input[name='confirmPassword']")
-    private WebElement confirmLocator;
+    private WebElement confirmPasswordLocator;
 
     @FindBy(css = "input[name='submit']")
     private WebElement submitButtonLocator;
 
-    public void enterFirstname(String firstname){
-        sendKeys(firstNameLocator, firstname);
-    }
 
-    public void enterLastname(String lastname){
-        sendKeys(lastNameLocator, lastname);
+    public void enterFirstName(String name){
+        sendKeys(firstNameLocator, name);
     }
-
+    public void enterLastName(String name){
+        sendKeys(lastNameLocator, name);
+    }
     public void enterPhoneNumber(String phone){
         sendKeys(phoneLocator, phone);
     }
-
     public void enterEmail(String email){
         sendKeys(emailLocator, email);
     }
-
     public void enterAddress(String address){
         sendKeys(address1Locator, address);
     }
-
-    public void enterCity(String city){
-        sendKeys(cityLocator, city);
-
+    public void enterCityName(String name){
+        sendKeys(cityLocator, name);
     }
-    public void enterState(String state){
-        sendKeys(stateLocator, state);
+    public void enterStateName(String state){
+        sendKeys(stateOrProvinceLocator, state);
     }
-
-    public void enterPostalCode(String postalcode){
-        sendKeys(postalCodeLocator, postalcode);
-
+    public void enterPostcode(String postcode){
+        sendKeys(postcodeLocator, postcode);
     }
-
     public void selectCountry(String country){
-        selectFromDropDownListUsingVisibilityOfText(countryLocator, country);
+        selectFromDropDownUsingVisibilityOfText(countryLocator, country);
+    }
+    public void selectCountry(int countryIndex){
+        selectFromDropDownUsingIndex(countryLocator, countryIndex);
 
     }
-    public void enterUsername(String username){
-        sendKeys(usernameLocator, username);
+    public void enterUserName(String name){
+        sendKeys(usernameLocator, name);
     }
     public void enterPassword(String password){
         sendKeys(passwordLocator, password);
     }
-    public void confirmPassword(String confirm){
-        sendKeys(confirmLocator, confirm);
-
+    public void enterConfirmPassword(String password){
+        sendKeys(confirmPasswordLocator, password);
     }
-    public void clickSubmit(){
-        click(submitButtonLocator);
 
+    public void clickOnSubmitButton(){
+        click(submitButtonLocator);
     }
 
 }

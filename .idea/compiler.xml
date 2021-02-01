@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="uiFunctional" />
+        <module name="learntoautomatefunctionaltest_uiB" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="learntoautomatefunctionaltest_uiB" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

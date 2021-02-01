@@ -1,1 +1,3 @@
-# learn2automateUi
+# learntoautomatefunctionaltest_ui
+# Jenkinsdelivery
+# JenkinsCI
